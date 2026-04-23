@@ -5,7 +5,58 @@ title: Podplane
 module:
   imports:
     - path: github.com/imfing/hextra
+  mounts:
+    - source: content
+      target: content
+    - source: ../podplane/docs
+      target: content/docs
 
 params:
+  description: Podplane is a Kubernetes distribution & PaaS
+  externalLinkDecoration: true
+  search:
+    enable: true
+    type: flexsearch
+  analytics:
+    umami:
+      serverURL: "https://cloud.umami.is"
+      websiteID: "a91e9df6-2a07-4f3a-94f0-38f4dbd46046"
+      scriptName: "script.js"
+  navbar:
+    displayLogo: true
+    logo:
+      path: podplane-icon.svg
+      width: 50
+      height: 50
+  customCSS:
+    - css/custom.css
   footer:
     displayPoweredBy: false
+
+menu:
+  main:
+    - name: Search
+      weight: 1
+      params:
+        type: search
+    - name: Discord
+      url: https://go.nadrama.com/discord
+      weight: 5
+      params:
+        icon: discord
+        external: true
+    - name: GitHub
+      url: https://github.com/podplane/podplane
+      weight: 10
+      params:
+        icon: github
+        external: true
+  sidebar:
+    - name: GitHub
+      url: https://github.com/podplane/podplane
+      weight: 1
+
+outputs:
+  home: [html, llms, markdown]
+  page: [html, markdown]
+  section: [html, markdown]
