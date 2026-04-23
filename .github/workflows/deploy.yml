@@ -43,6 +43,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+      - name: Checkout podplane docs
+        uses: actions/checkout@v4
+        with:
+          repository: podplane/podplane
+          path: podplane
+          sparse-checkout: docs
+      - name: Copy podplane docs
+        run: |
+          cp -r podplane/docs content/docs
+          # Remove the external mount since docs are now copied locally
+          sed -i '/source: \.\.\/podplane\/docs/,+1d' hugo.yaml
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
