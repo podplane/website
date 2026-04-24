@@ -2,14 +2,28 @@ baseURL: https://podplane.dev/
 languageCode: en-us
 title: Podplane
 
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+    - source: 'assets/notwatching/hugo_stats\.json'
+      target: css
+    - source: '(postcss|tailwind)\.config\.js'
+      target: css
+
 module:
   imports:
     - path: github.com/imfing/hextra
   mounts:
+    - source: assets
+      target: assets
     - source: content
       target: content
     - source: ../podplane/docs
       target: content/docs
+    - source: hugo_stats.json
+      target: assets/notwatching/hugo_stats.json
+      disableWatch: true
 
 params:
   description: Podplane is a Kubernetes distribution & PaaS
@@ -28,8 +42,6 @@ params:
       path: podplane-icon.svg
       width: 50
       height: 50
-  customCSS:
-    - css/custom.css
   footer:
     displayPoweredBy: false
 

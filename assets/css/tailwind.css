@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
 :root {
   --primary-hue: 230deg;
   --primary-saturation: 97%;
