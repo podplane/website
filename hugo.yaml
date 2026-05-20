@@ -51,11 +51,11 @@ menu:
       weight: 1
       params:
         type: search
-    - name: Discord
-      url: https://go.nadrama.com/discord
+    - name: Community Forum
+      url: https://forum.podplane.dev
       weight: 5
       params:
-        icon: discord
+        icon: chat
         external: true
     - name: GitHub
       url: https://github.com/podplane/podplane
@@ -64,6 +64,9 @@ menu:
         icon: github
         external: true
   sidebar:
+    - name: Community Forum
+      url: https://forum.podplane.dev
+      weight: 1
     - name: GitHub
       url: https://github.com/podplane/podplane
       weight: 1
