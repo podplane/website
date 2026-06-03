@@ -54,11 +54,13 @@ jobs:
           cp -r podplane/docs content/docs
           # Remove the external mount since docs are now copied locally
           sed -i '/source: \.\.\/podplane\/docs/,+1d' hugo.yaml
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+        run: bun install --frozen-lockfile
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
