@@ -41,7 +41,7 @@ layout: hextra-home
 
 <div class="flex items-start">
   <span class="text-green-400">➜</span>
-  <span class="ml-2">podplane deploy webapp --name test --image caddy</span>
+  <span class="ml-2">podplane deploy web --name test --image ghcr.io/podplane/hello:latest</span>
 </div>
 
 <div class="ml-4 pb-1 text-gray-500">
