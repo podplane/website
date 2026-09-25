@@ -5,3 +5,16 @@
   --primary-hue: 230deg;
   --primary-saturation: 97%;
 }
+
+.dark .content :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  color: var(--hx-color-primary-300);
+}
+
+.dark .content :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)):hover {
+  color: var(--hx-color-primary-200);
+}
+
+html.dark .hextra-sidebar-container .hextra-sidebar-active-item,
+html.dark .hextra-sidebar-container [data-active="true"] .hextra-sidebar-collapsible-button {
+  color: var(--hx-color-primary-300) !important;
+}

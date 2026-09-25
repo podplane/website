@@ -54,4 +54,5 @@ layout: hextra-home
   Podplane is an Open Source Kubernetes distribution & PaaS you can run in a few minutes on your public or private cloud, with everything you need to deploy your apps built-in.
 {{< /hextra/hero-subtitle >}}
 
-{{< hextra/hero-button text="Get Started" link="/docs/getting-started" style="margin-bottom: 2rem;" >}}
+{{< hextra/hero-button text="Get Started" link="/docs/guides/installation/" style="margin: 0 0.25rem 2rem;" >}}
+{{< hextra/hero-button text="Explore Features" link="/docs/features/" variant="secondary" style="margin: 0 0.25rem 2rem;" >}}
