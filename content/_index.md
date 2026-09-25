@@ -35,8 +35,21 @@ layout: hextra-home
 
 <div class="flex items-start">
   <span class="text-green-400">➜</span>
+  <span class="ml-2">podplane secret create --for hello secure-message</span>
+</div>
+
+<div class="ml-4 pb-1 text-gray-500">
+  > Enter secret value (input hidden)<br />
+  > Encrypted and stored secret "secure-message" for "hello"
+</div>
+
+<div class="flex items-start">
+  <span class="text-green-400">➜</span>
   <span class="ml-2">podplane deploy web --name hello \<br />
-    &nbsp;&nbsp;--hostname hello.default.localhost</span>
+    &nbsp;&nbsp;--image default-registry.local/mirror/ghcr.io/podplane/hello:latest \<br />
+    &nbsp;&nbsp;--hostname hello.default.localhost \<br />
+    &nbsp;&nbsp;--secret secure-message \<br />
+    &nbsp;&nbsp;-e HELLO_MESSAGE=/var/run/podplane/secrets/secure-message</span>
 </div>
 
 <div class="ml-4 text-gray-500">
@@ -52,10 +65,8 @@ layout: hextra-home
 </div>
 
 <div class="ml-4 pb-1 text-gray-500">
-  > Generated cluster configuration file `podplane.cluster.json`<br />
-  > Detected `tofu` command<br />
-  > Generated infrastructure configuration `./tf`<br />
-  > Deployed cluster "my-cluster" via `tofu apply`<br />
+  > Generated podplane.cluster.jsonc and infrastructure in ./tf<br />
+  > Detected tofu; deployed cluster "my-cluster" with tofu apply
 </div>
 
 <div class="flex items-start">
@@ -64,18 +75,29 @@ layout: hextra-home
 </div>
 
 <div class="ml-4 pb-1 text-gray-500">
-  > Opening your browser for authentication at https://auth.example.com ...<br />
-  > Success! You can now use tools like kubectl with the "my-cluster" context
+  > Opening your browser for OIDC authentication...<br />
+  > Logged in and configured kubectl context "my-cluster"
 </div>
 
 <div class="flex items-start">
   <span class="text-green-400">➜</span>
-  <span class="ml-2">podplane deploy web --name test --image ghcr.io/podplane/hello:latest</span>
+  <span class="ml-2">podplane push hello:v1</span>
 </div>
 
 <div class="ml-4 pb-1 text-gray-500">
-  > Deploying web app test using helm...<br />
-  > Success! View your app at <span class="terminal-url">https://my-cluster.<wbr>example.com</span>
+  > Pushed registry.example.com/apps/hello:v1
+</div>
+
+<div class="flex items-start">
+  <span class="text-green-400">➜</span>
+  <span class="ml-2">podplane deploy web --name hello \<br />
+    &nbsp;&nbsp;--image registry.example.com/apps/hello:v1 \<br />
+    &nbsp;&nbsp;--hostname hello.example.com</span>
+</div>
+
+<div class="ml-4 pb-1 text-gray-500">
+  > Deploying web app hello...<br />
+  > Success! Open <span class="terminal-url">https://hello.<wbr>example.com</span>
 </div>
 </div>
 {{< /terminal >}}
