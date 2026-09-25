@@ -18,3 +18,42 @@ html.dark .hextra-sidebar-container .hextra-sidebar-active-item,
 html.dark .hextra-sidebar-container [data-active="true"] .hextra-sidebar-collapsible-button {
   color: var(--hx-color-primary-300) !important;
 }
+
+.terminal-tab {
+  border: 1px solid transparent;
+  border-bottom-color: #30384b;
+  border-radius: 0.375rem 0.375rem 0 0;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.terminal-tab:hover {
+  color: #e5e7eb;
+  background: #1a2030;
+}
+
+.terminal-tab[aria-selected="true"] {
+  border-color: #30384b;
+  border-bottom: 0;
+  padding-bottom: calc(0.5rem + 1px);
+  color: #f3f4f6;
+  background: #161b28;
+  border-top: 1px solid #5470fc;
+}
+
+.terminal-tab:focus-visible {
+  outline: 2px solid #8b9efd;
+  outline-offset: -3px;
+}
+
+.terminal-content {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 639px) {
+  .terminal-url {
+    display: block;
+    margin-left: 1rem;
+    overflow-wrap: normal;
+  }
+}

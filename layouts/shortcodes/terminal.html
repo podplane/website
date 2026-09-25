@@ -1,11 +1,57 @@
-<div class="h-auto w-full max-w-[942px] overflow-x-hidden rounded-xl border-2 border-[#0000b8] bg-[#161b28] p-6 font-mono text-md lg:overflow-hidden">
-  <div class="mb-4 flex items-center gap-2">
-    <div class="h-3 w-3 rounded-full bg-[#ff5f57]"></div>
-    <div class="h-3 w-3 rounded-full bg-[#febc2e]"></div>
-    <div class="h-3 w-3 rounded-full bg-[#28c840]"></div>
+<div data-terminal-tabs class="h-auto w-full max-w-[942px] overflow-hidden rounded-xl border-2 border-[#0000b8] bg-[#161b28] font-mono text-md">
+  <div class="flex items-end bg-[#101521] pt-3">
+    <div aria-hidden="true" class="hidden shrink-0 items-center gap-2 border-b border-[#30384b] pb-3 px-4 sm:flex">
+      <div class="h-3 w-3 rounded-full bg-[#ff5f57]"></div>
+      <div class="h-3 w-3 rounded-full bg-[#febc2e]"></div>
+      <div class="h-3 w-3 rounded-full bg-[#28c840]"></div>
+    </div>
+
+    <div role="tablist" aria-label="Podplane demos" class="flex min-w-0 overflow-x-auto font-sans text-sm">
+      <button id="terminal-tab-local" type="button" role="tab" aria-selected="true" aria-controls="terminal-panel-local" tabindex="0" class="terminal-tab whitespace-nowrap px-4 py-2">
+        Run a Local Cluster
+      </button>
+      <button id="terminal-tab-aws" type="button" role="tab" aria-selected="false" aria-controls="terminal-panel-aws" tabindex="-1" class="terminal-tab whitespace-nowrap px-4 py-2">
+        Deploy to AWS
+      </button>
+    </div>
+    <div aria-hidden="true" class="min-w-0 flex-1 self-stretch border-b border-[#30384b]"></div>
   </div>
 
-  <div class="space-y-2 text-gray-300">
+  <div class="terminal-content p-4 text-gray-300 sm:p-6">
     {{ .Inner | safeHTML }}
   </div>
 </div>
+
+<script>
+  (() => {
+    const terminal = document.currentScript.previousElementSibling;
+    const tabs = [...terminal.querySelectorAll('[role="tab"]')];
+    const panels = [...terminal.querySelectorAll('[role="tabpanel"]')];
+
+    const selectTab = (tab, focus = false) => {
+      for (const candidate of tabs) {
+        const selected = candidate === tab;
+        candidate.setAttribute("aria-selected", String(selected));
+        candidate.tabIndex = selected ? 0 : -1;
+      }
+      for (const panel of panels) {
+        panel.hidden = panel.id !== tab.getAttribute("aria-controls");
+      }
+      if (focus) tab.focus();
+    };
+
+    for (const [index, tab] of tabs.entries()) {
+      tab.addEventListener("click", () => selectTab(tab));
+      tab.addEventListener("keydown", (event) => {
+        let next = index;
+        if (event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+        else if (event.key === "Home") next = 0;
+        else if (event.key === "End") next = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectTab(tabs[next], true);
+      });
+    }
+  })();
+</script>

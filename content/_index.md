@@ -13,10 +13,39 @@ layout: hextra-home
 {{< /hextra/hero-headline >}}
 
 {{< hextra/hero-subtitle style="font-size: 2rem; color: #4b5563; margin-bottom: 2rem;" >}}
-  Run Containers on VMs in minutes on AWS, Google Cloud, or Proxmox.
+  Container PaaS in minutes: AWS, Google Cloud, Proxmox, or Localhost.
 {{< /hextra/hero-subtitle >}}
 
 {{< terminal >}}
+<div id="terminal-panel-local" role="tabpanel" aria-labelledby="terminal-tab-local" class="space-y-2">
+<div class="flex items-start">
+  <span class="text-green-400">➜</span>
+  <span class="ml-2">brew install podplane/tap/podplane</span>
+</div>
+
+<div class="flex items-start pt-1">
+  <span class="text-green-400">➜</span>
+  <span class="ml-2">podplane local start</span>
+</div>
+
+<div class="ml-4 pb-1 text-gray-500">
+  > Downloading local cluster dependencies...<br />
+  > Kubernetes is ready and kubectl is configured
+</div>
+
+<div class="flex items-start">
+  <span class="text-green-400">➜</span>
+  <span class="ml-2">podplane deploy web --name hello \<br />
+    &nbsp;&nbsp;--hostname hello.default.localhost</span>
+</div>
+
+<div class="ml-4 text-gray-500">
+  > Deploying web app hello...<br />
+  > Success! Open <span class="terminal-url">https://hello.<wbr>default.<wbr>localhost:4433/</span>
+</div>
+</div>
+
+<div id="terminal-panel-aws" role="tabpanel" aria-labelledby="terminal-tab-aws" class="space-y-2" hidden>
 <div class="flex items-start">
   <span class="text-green-400">➜</span>
   <span class="ml-2">podplane cluster create</span>
@@ -46,7 +75,8 @@ layout: hextra-home
 
 <div class="ml-4 pb-1 text-gray-500">
   > Deploying web app test using helm...<br />
-  > Success! View your app at https://my-cluster.example.com
+  > Success! View your app at <span class="terminal-url">https://my-cluster.<wbr>example.com</span>
+</div>
 </div>
 {{< /terminal >}}
 
