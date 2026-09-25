@@ -43,7 +43,11 @@
   },
   {
     "source_url": "podplane.dev/docs/secrets/",
-    "target_url": "https://podplane.dev/docs/guides/secrets/"
+    "target_url": "https://podplane.dev/docs/guides/manage-secrets/"
+  },
+  {
+    "source_url": "podplane.dev/docs/guides/secrets/",
+    "target_url": "https://podplane.dev/docs/guides/manage-secrets/"
   },
   {
     "source_url": "podplane.dev/docs/rbac/",
