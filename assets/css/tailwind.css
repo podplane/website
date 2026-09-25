@@ -57,3 +57,18 @@ html.dark .hextra-sidebar-container [data-active="true"] .hextra-sidebar-collaps
     overflow-wrap: normal;
   }
 }
+
+.hextra-search-wrapper {
+  margin: 0 1em !important;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hextra-nav-container nav > a:is(
+    [href="/docs/guides/"],
+    [href="/docs/features/"],
+    [href="/docs/reference/"],
+    [href="/docs/contributing/"]
+  ) {
+    display: none;
+  }
+}

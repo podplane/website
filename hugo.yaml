@@ -47,19 +47,31 @@ params:
 
 menu:
   main:
-    - name: Search
+    - name: Guides
+      url: /docs/guides/
       weight: 1
+    - name: Features
+      url: /docs/features/
+      weight: 2
+    - name: Reference
+      url: /docs/reference/
+      weight: 3
+    - name: Contribute
+      url: /docs/contributing/
+      weight: 4
+    - name: Search
+      weight: 10
       params:
         type: search
     - name: Community Forum
       url: https://forum.podplane.dev
-      weight: 5
+      weight: 20
       params:
         icon: chat
         external: true
     - name: GitHub
       url: https://github.com/podplane/podplane
-      weight: 10
+      weight: 30
       params:
         icon: github
         external: true
