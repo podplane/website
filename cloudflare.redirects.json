@@ -1,0 +1,56 @@
+[
+  {
+    "source_url": "podplane.dev/docs/cli-reference/",
+    "target_url": "https://podplane.dev/docs/reference/cli/commands/",
+    "subpath_matching": true,
+    "preserve_path_suffix": true
+  },
+  {
+    "source_url": "podplane.dev/docs/cli-overview/",
+    "target_url": "https://podplane.dev/docs/reference/cli/overview/"
+  },
+  {
+    "source_url": "podplane.dev/docs/cli-storage/",
+    "target_url": "https://podplane.dev/docs/reference/cli/storage/"
+  },
+  {
+    "source_url": "podplane.dev/docs/config-reference/",
+    "target_url": "https://podplane.dev/docs/reference/configuration/"
+  },
+  {
+    "source_url": "podplane.dev/docs/architecture/",
+    "target_url": "https://podplane.dev/docs/reference/architecture/"
+  },
+  {
+    "source_url": "podplane.dev/docs/components/",
+    "target_url": "https://podplane.dev/docs/reference/components/"
+  },
+  {
+    "source_url": "podplane.dev/docs/infrastructure/",
+    "target_url": "https://podplane.dev/docs/reference/infrastructure/"
+  },
+  {
+    "source_url": "podplane.dev/docs/vmconfig/",
+    "target_url": "https://podplane.dev/docs/reference/vm-configuration/"
+  },
+  {
+    "source_url": "podplane.dev/docs/seeds/",
+    "target_url": "https://podplane.dev/docs/reference/seeds/"
+  },
+  {
+    "source_url": "podplane.dev/docs/getting-started/",
+    "target_url": "https://podplane.dev/docs/guides/"
+  },
+  {
+    "source_url": "podplane.dev/docs/secrets/",
+    "target_url": "https://podplane.dev/docs/guides/secrets/"
+  },
+  {
+    "source_url": "podplane.dev/docs/rbac/",
+    "target_url": "https://podplane.dev/docs/guides/rbac/"
+  },
+  {
+    "source_url": "podplane.dev/docs/templates/",
+    "target_url": "https://podplane.dev/docs/reference/templates/"
+  }
+]

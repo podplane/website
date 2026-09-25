@@ -1,5 +1,9 @@
 {
   "private": true,
+  "scripts": {
+    "redirects:plan": "bun scripts/sync-cloudflare-redirects.ts",
+    "redirects:apply": "bun scripts/sync-cloudflare-redirects.ts --apply"
+  },
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.4",
     "tailwindcss": "^4.1.0"
