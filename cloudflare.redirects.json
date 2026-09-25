@@ -56,5 +56,9 @@
   {
     "source_url": "podplane.dev/docs/templates/",
     "target_url": "https://podplane.dev/docs/reference/templates/"
+  },
+  {
+    "source_url": "podplane.dev/docs/topologies/",
+    "target_url": "https://podplane.dev/docs/guides/topologies/"
   }
 ]
